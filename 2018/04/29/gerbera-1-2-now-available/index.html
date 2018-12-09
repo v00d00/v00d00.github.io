@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Gerbera Media Server 1.2 Now Available | v00d00.net
+</title>
+  <link rel="canonical" href="/2018/04/29/gerbera-1-2-now-available/index.html">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
+
+  
+  <meta name="description" content="I am happy to announce that Gerbera Media Server 1.2.0 is now available. We have had contributions from 15 different contributors, putting together 172 changes since 1.1. Thank you so much to everyone involved! New Web UI The most noticeable change since v1.1 will be new …">
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/terminal-solid.svg width=150 height=150 alt="v00d00.net">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">v00d00.net</a></h1>
+      <p class="text-muted">/dev/random</p>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a class="fa fa-github" href="https://github.com/v00d00" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fa fa-twitter" href="https://twitter.com/thevoodoo" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Gerbera Media Server 1.2 Now Available
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2018-04-29T10:20:00+01:00">
+          <i class="fa fa-clock-o"></i>
+          Sun 29 April 2018
+        </li>
+        <li class="list-inline-item">
+          <i class="fa fa-folder-open-o"></i>
+          <a href="/category/gerbera.html">Gerbera</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fa fa-files-o"></i>
+              <a href="/tag/gerbera.html">#gerbera</a>,               <a href="/tag/mediaserver.html">#mediaserver</a>,               <a href="/tag/upnp.html">#upnp</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p>I am happy to announce that Gerbera Media Server 1.2.0 is now available.</p>
+<p>We have had contributions from 15 different contributors, putting together 172 changes since 1.1. Thank you so much to everyone involved!</p>
+<h2>New Web UI</h2>
+<p>The most noticeable change since v1.1 will be new awesome new Web UI. We shipped a beta of this in the previous version, but now it it is ready for prime time, and enabled by default.</p>
+<p><img alt="filesystem-view" class="img-fluid" src="/images/filesystem-view.png"/></p>
+<p>Thank you to <a href="https://github.com/elmodaddyb">Eamonn</a> for all of his ongoing hard work!</p>
+<p><img alt="gerbera-import-webui" class="img-fluid" src="/images/gerbera-import-webui.gif"/></p>
+<h2>UPnP Search</h2>
+<p>Gerbera now supports searching! This allows clients to offload the hard work of finding your media to the server, this is both faster an more reliable than clients doing it themselves.</p>
+<p>If you are a BubbleUPnP user on android, this means the "Random Tracks" feature now works.</p>
+<p>Thank you to <a href="https://github.com/astylos">astylos</a> for this great feature!</p>
+<h2>Improved Docs</h2>
+<p>Some of you have mentioned that Gerbera's documentation, as with many other free software projects, has not been as good as it could or should have been.</p>
+<p>We are happy to point you to <a href="http://docs.gerbera.io/">docs.gerbera.io</a>, kindly hosted by <a href="https://readthedocs.org/">Read the Docs</a>.</p>
+<p>If you wish to help, it is very easy to get started, simply open a pull request against Sphinx files in the <code>doc</code> folder.</p>
+<h2>Bye, Youtube</h2>
+<p>Youtube support has not worked for a long time so it has been removed from the code base entirely. Similar functionality may return in a future release.</p>
+<h2>Bugfixes</h2>
+<ul>
+<li>Fixed AUXDATA truncation with UTF-8 characters.</li>
+<li>Improved message when libupnp fails to bind correctly.</li>
+<li>Allow use of FFMpeg to extract AUXDATA</li>
+<li>Duktape JS scripting errors are now visible in log file</li>
+<li>Fixed a crash in EXIV2 image handler.</li>
+<li>Fixed "root path" sometimes missing for scripted layouts.</li>
+</ul>
+<h2>Get it</h2>
+<p>Find out how to <a href="http://docs.gerbera.io/en/latest/install.html">install Gerbera</a>.</p>
+<p>Download the source from <a href="https://github.com/gerbera/gerbera/releases/tag/v1.2.0">Github</a>.</p>
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="/categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="/tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+</body>
+
+</html>
