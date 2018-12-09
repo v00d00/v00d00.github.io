@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Gerbera 1.1 Released | v00d00.net
+</title>
+  <link rel="canonical" href="/2017/09/29/gerbera-1-1-released/index.html">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
+
+  
+  <meta name="description" content="I am proud to announce the second release of the Gerbera media server. There have been over 110 commits since 1.0 from 13 awesome contributors. So whats new? Modern UI Preview @elmodaddyb has been hard at work on the next generation UI for Gerbera. Built using Boostrap4 with TDD …">
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/terminal-solid.svg width=150 height=150 alt="v00d00.net">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">v00d00.net</a></h1>
+      <p class="text-muted">/dev/random</p>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a class="fa fa-github" href="https://github.com/v00d00" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fa fa-twitter" href="https://twitter.com/thevoodoo" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Gerbera 1.1 Released
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2017-09-29T10:20:00+01:00">
+          <i class="fa fa-clock-o"></i>
+          Fri 29 September 2017
+        </li>
+        <li class="list-inline-item">
+          <i class="fa fa-folder-open-o"></i>
+          <a href="/category/gerbera.html">Gerbera</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fa fa-files-o"></i>
+              <a href="/tag/gerbera.html">#gerbera</a>,               <a href="/tag/mediaserver.html">#mediaserver</a>,               <a href="/tag/upnp.html">#upnp</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p><a href="https://gerbera.io/"><img alt="Gerbera Logo" class="img-fluid" src="/images/gerbera-logo-horiz.png"/></a></p>
+<p>I am proud to announce the second release of the Gerbera media server. There have been over 110 commits since 1.0 from 13 awesome contributors.</p>
+<h2>So whats new?</h2>
+<h3>Modern UI Preview</h3>
+<p>@elmodaddyb has been hard at work on the next generation UI for Gerbera. Built using Boostrap4 with TDD methodologies; this will be the default Web UI in a future version. This release includes a read only preview of the interface. Access it by visiting <code>gerbera.html</code> on your v1.1 install e.g. <code>http://localhost:49152/gerbera.html</code></p>
+<p>You can keep track of the progress <a href="https://github.com/gerbera/gerbera/issues/84">on the New UI github issue</a>.</p>
+<p><img alt="" class="img-fluid" src="https://user-images.githubusercontent.com/8599799/28802450-7605ea34-7624-11e7-8185-3425a6000d32.png"/></p>
+<h3>Raspberry Pi / 32bit fixes</h3>
+<p>Post 1.0 we had a number of issues reported by Raspberry Pi users. Investigation found that we were not properly supporting large files in the build system for 32 bit hosts. We have added LFS support and Gerbera now runs great on Raspberry Pi!</p>
+<p>Unfortunately this issue highlighted a bug in libupnp - client apps should fail to build when their LFS state did not match libupnp. This has been <a href="https://github.com/ukleinek/pupnp/commit/74c98de50a03f603d6fedf3d4f0377b274d54d75">fixed</a> upstream.</p>
+<h3>Video thumbnail support</h3>
+<p>Support for video thumbnails using FFMpegThumbnailer is back. You can enable video thumbnail support by passing <code>-DWITH_FFMPEGTHUMBNAILER=1</code> at build time and set <code>&lt;ffmpegthumbnailer enabled="yes"&gt;</code> in your config file to get pretty thumbnails for your video files.</p>
+<h3>Protocol Extensions</h3>
+<p>You can now enable incomplete DLNA protocol extensions in Gerbera. With this option Gerbera makes changes to the data sent to devices to enable support for less picky DLNA renderers. It also enables AlbumArt/Thumbnails on some devices (e.g. various LG TVs).</p>
+<p>Full DLNA support is high on the ToDo list, however we are still waiting for custom HTTP header support in libupnp before we can implement it. If you want to help (or know somebody who can), [please check out libupnp's github]https://github.com/mrjimenez/pupnp/pull/49).</p>
+<h3>BSD Fixes</h3>
+<p>We have had some great feedback and patches from BSD users since 1.0 and we have merged user patches to add support for INotify via libinotify and to add support for native UUID generation functions.</p>
+<h3>Album Artists</h3>
+<p>AlbumArtist metadata is now extracted from media files (where supported) and is used to populate the "creator" field for albums. It is also available for use with custom JavaScript powered layouts.</p>
+<h3>OSX improvements</h3>
+<p>@elmodaddyb spent some time getting Gerbera running on OSX and <a href="https://github.com/gerbera/gerbera#on-macos">produced some build instructions</a>, we now ship an <a href="https://github.com/gerbera/gerbera/tree/master/scripts/launchd">OSX Launchd script</a> in the repo.</p>
+<h3>Other notable changes</h3>
+<ul>
+<li>
+<p>MySQL is no longer enabled by default in CMake, you will need to pass <code>-DWITH_MYSQL=1</code> at build time if you want support. We recommend using SQLite.</p>
+</li>
+<li>
+<p>The <code>--pidfile</code> option has been removed, as we removed the <code>--daemon</code> option in the previous release retaining <code>--pidfile</code> option did not make sense. Please update your scripts if you were using this flag.</p>
+</li>
+<li>
+<p>We have moved to a new github organisation, check us out at <a href="https://github.com/gerbera">github.com/gerbera</a> 👍</p>
+</li>
+</ul>
+<p>And more!</p>
+<p>As always a huge thanks to everyone who has contributed to this release.</p>
+<p>See <a href="https://github.com/gerbera/gerbera#installing">how to install Gerbera</a> on your OS/Distro or <a href="https://github.com/gerbera/gerbera/releases/tag/v1.1.0">download the source</a> from Github.</p>
+<h3>Note on LibUPnP support</h3>
+<p>This release supports &lt;=libupnp 1.8.2 due to breaking changes in libupnp master branch, 1.2 will most likely require &gt;=1.8.3.</p>
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="/archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="/categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="/tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+</body>
+
+</html>
